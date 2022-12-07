@@ -283,9 +283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  target: {fileID: 0}
-  MmaxHP: 100
-  MnowHP: 100
+  MmaxHP: 300
+  MnowHP: 300
   MnowHpBar: {fileID: 7973858341017910959}
   sprites: []
 --- !u!50 &-7680456205370091948
