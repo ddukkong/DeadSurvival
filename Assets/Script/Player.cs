@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Player : MonoBehaviour
     public float Speed;
     Rigidbody2D rigid;
     SpriteRenderer spriter;
+    Animator anim;
 
     public int maxHP;
     public int nowHP;
@@ -16,10 +18,13 @@ public class Player : MonoBehaviour
 
     public Transform firePoint;
     public GameObject bulletToFire;
+
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         nowHP = maxHP;
         theCam = Camera.main;
     }
@@ -55,9 +60,11 @@ public class Player : MonoBehaviour
         {
             spriter.flipX = inputVec.x < 0;
         }
+        anim.SetFloat("Speed", inputVec.magnitude);
     }
     void OnMove(InputValue value)
     {
+        
         inputVec = value.Get<Vector2>();
     }
 
@@ -70,6 +77,9 @@ public class Player : MonoBehaviour
             {
                 Destroy(gameObject);
                 Destroy(nowHpBar.gameObject);
+                anim.SetBool("Dead", true);
+                SceneManager.LoadScene(2);
+
             }
         }
     }
@@ -84,6 +94,8 @@ public class Player : MonoBehaviour
             {
                 Destroy(gameObject);
                 Destroy(nowHpBar.gameObject);
+                anim.SetBool("Dead", true);
+                SceneManager.LoadScene(2);
             }
 
         }

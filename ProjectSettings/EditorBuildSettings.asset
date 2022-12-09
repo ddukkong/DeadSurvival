@@ -5,7 +5,17 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 1beb97bc17fa5f6408dcaceaa10aea22
+  - enabled: 1
+    path: Assets/Scenes/Vampier.unity
+    guid: 38e5db794b8649e42b8feb732f733f6c
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 8e43c1098ac27f041b6c28596666d7dc
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: cfafd68b0cddf604c8e605265ab89f0f, type: 2}

@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Coin2
   - Coin0
   - Coin1
-  - Coin2
   - Enemy
   - Bullet
   - Ground
